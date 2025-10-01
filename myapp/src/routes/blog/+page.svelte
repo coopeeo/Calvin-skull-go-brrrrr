@@ -4,8 +4,7 @@
 </svelte:head>
 
 <script lang="ts">
-	import Modal from 'flowbite-svelte/Modal.svelte';
-	import Button from 'flowbite-svelte/Button.svelte';
+	import Modal from 'flowbite-svelte/Modal.svelte';``
 	import snarkdown from 'snarkdown';
 	import { onMount } from 'svelte';
 	let modalStates = $state<boolean[]>([]);
@@ -58,13 +57,13 @@
 			</button>
 			{#if index < modalStates.length}
 				<Modal
+					size="lg"
 					title={entry.Title}
 					classes={{ header: 'text-ctp-text' }}
-					size="lg"
 					form
 					bind:open={modalStates[index]}
 					onaction={({ action }) => alert(`Handle "${action}"`)}
-					class="bg-ctp-surface1 text-ctp-subtext1 outline-3 outline-offset-0 outline-solid"
+					class="h-screen bg-ctp-surface1 text-ctp-subtext1 outline-3 outline-offset-0 outline-solid"
 					><h1>{@html snarkdown(entry?.Content)}</h1>
 					<!-- <Button type="submit" color="alternative">Add a comment</Button> -->
 				</Modal>
